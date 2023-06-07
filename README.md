@@ -14,7 +14,7 @@ There isn't any meaningfull dependencies, only basic libraries are used (csv,sys
 
 # Input
 
-There isn't any input, all 3 file (Extract_Eplete, multiplet.sh, merge.sh) must be in the same case, then the user only has to run multiplet.sh with a cup of cofee
+There isn't any input, all 3 file (Extract_Eplete, multiplet.sh, merge.sh) must be in the same case, then the user only has to run multiplet.sh with a cup of coffee (or tea for soulless ones)
 
 
 # Data information
