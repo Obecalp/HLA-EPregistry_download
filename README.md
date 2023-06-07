@@ -1,4 +1,4 @@
-# HLA-EPregistry_uploading
+# HLA-EPregistry_download
 Upload eplet-data from HLA-Eplet-registry
 
 # Introduction
