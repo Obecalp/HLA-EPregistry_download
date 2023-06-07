@@ -5,8 +5,6 @@ import csv
 
 
 
-"Fait pour extraire les données du site epregistry sous le format tel qu'il est le 20/03/2023 et les convertir en fichier csv, toute utilisation ultérieure est à risque de données corrompues"
-" Utilisation: ./taupikotte.py <fichier.html contenant le code source> <fichier.txt issu de csv> <fichier.csv vierge cible>"
 
 
 #Part of affine: DPB1*10:123Q -> 10123
@@ -65,8 +63,7 @@ def Affine(eplet,liste):
 		Allele=[]
 	return Alleles
 
-# cherche dans la page html la liste d'allele en fonction de la position a laquelle a été localisée le nom de l'Eplet
-#quote= citation localisant l'Eplet, position= position de la quote, liste=page_entière
+
 #begin the research of the allele list corresponding to the eplet found at the line 'position' in the page html 'liste'
 def seek_item(quote,liste,position):
 	for line in range(len(liste)-position):
@@ -94,9 +91,6 @@ Allalleles=[]
 for i in html_file:
 	table_html.append(i)
 
-#Dans un premier temps recherche de la citation accompagnant le nom de l'Eplet pour le localiser et prélever sa position.
-#Exécution de seek_item pour prélever les deux listes d'alleles (luminex et luminex+non-luminex).
-#Exécution de Affine pour rendre le nom de l'allèle prélevé compatible avec la base de donnée
 
 #step1: find every eplet using the quote "HLA alleles..."
 #step2: use seek_item to return the allele list in the next line "Liste of all..)
@@ -152,11 +146,12 @@ for i in entry:
 		if len(sublist)>0: liste.append(sublist)
 		sublist=[]
 file_v1.close()
-#Ordonnancement du tableau, plus utile pour d'éventuels futurs tests, à court-circuiter en cas de lenteur
+
+
 HLA_CSV=[]
 row=[]
 
-#combine every
+#combine Exposition/verification and allele list
 for i in range(len(databank)):
 	for j in databank[i][1]:
 		
@@ -169,8 +164,6 @@ for i in range(len(databank)):
 		row=[]
 
 
-#/!\ ecriture de "=\""+<HLA_CSV>+"\"" pour garder les 0 au début, sinon excel les supprime
-#Edit pas forcement necessaire au final? les 0 sont conservés dans le fichier, juste non affichés
 with open(sys.argv[3],'w',newline='') as fichier_CSV:
 			trans= csv.writer(fichier_CSV, delimiter=';')
 			for i in range(len(HLA_CSV)):
