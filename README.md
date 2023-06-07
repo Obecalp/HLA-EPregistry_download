@@ -30,7 +30,7 @@ All data are not required for HLA-EPI, so only a part of the data will be downlo
 
 # Output
 
-A csv file dated is created containing all data required for HLA-EPI as update_date.csv. The format data is "HLA;allele;exposition;verification" for exemple C;0101;t;t
+A csv file dated is created containing all data required for HLA-EPI as update_dd_mm_yyyy.csv. The format data is "HLA;allele;exposition;verification" for exemple C;0101;t;t
 
 For more clarity five more case are created, one for each website page concerned by HLA-EPI (ABC,DQ,DP,DR,interlocus). They contain:
 - The html page used to extract the data
