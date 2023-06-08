@@ -3,14 +3,14 @@ Upload eplet-data from HLA-Eplet-registry
 
 # Introduction
 
-This project come in addition of HLA-EPI_Bash (https://github.com/Obecalp/HLA-EPI_Bash-edit) and aim to upload required eplets data to run it from HLA Eplet Registry (https://epregistry.com.br/index/databases/database/ABC). 
+This project comes in addition of HLA-EPI_Bash (https://github.com/Obecalp/HLA-EPI_Bash-edit) and aim to upload required eplets data to run it from HLA Eplet Registry (https://epregistry.com.br/index/databases/database/ABC). 
 
 
-This project don't aim to be long term, the script is strongly dependant of the website structure, and any redesign would be susceptible make it obsolete. Still, it's entirely functionnal thee 07/06/2023
+This project doesn't aim to be long term, the script is strongly dependant of the website structure, and any redesign would be susceptible make it obsolete. Still, it's entirely functionnal the 07/06/2023
 
 # Dependencies
 
-There isn't any meaningfull dependencies, only basic libraries are used (csv,sys)
+There isn't any meaningfull dependencies, only basics libraries are used (csv,sys)
 
 # Input
 
@@ -24,13 +24,13 @@ As said in the introduction, the data targeted concern Eplet-allele relation com
 All data are not required for HLA-EPI, so only a part of the data will be downloaded:
 - The alleles downloaded are A,B,C,DQA1,DQB1,DRB1,DPB1. These are the considered as the most pertinent for HLA-EPI usage.
 - The Exposition data is converted  in boolean, High/Intermediate become Exposed, Very Low/Low become false
-- The section Luminex + non luminex allele is downloaded, but the "only luminex" section won't be. Still, all alleles concerned will be downloaded.
+- The section Luminex + non luminex allele is downloaded, but the "only luminex" section won't be since they are in the previous section.
 
 
 
 # Output
 
-A csv file dated is created containing all data required for HLA-EPI as update_dd_mm_yyyy.csv. The format data is "HLA;allele;exposition;verification" for exemple C;0101;t;t
+A csv file dated is created containing all data required for HLA-EPI as update_dd_mm_yyyy.csv. The format data is "HLA;allele;exposition;verification". An exemple could be C;0101;t;t
 
 For more clarity five more case are created, one for each website page concerned by HLA-EPI (ABC,DQ,DP,DR,interlocus). They contain:
 - The html page used to extract the data
